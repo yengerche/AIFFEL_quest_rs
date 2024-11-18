@@ -9,8 +9,8 @@
         - 중요! 해당 조건을 만족하는 부분을 캡쳐해 근거로 첨부
         ![screenshot](./image/ex03_01.png)
         - 이미지에 스티커가 잘 붙어 있습니다.
-        - ```
-        img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
+```
+img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
 
 refined_x = x - w // 2
 refined_y = y - h // 2
@@ -20,7 +20,7 @@ sticker_area = img_rgb[refined_y:refined_y+img_sticker.shape[0], refined_x:refin
 
 img_rgb[refined_y:refined_y+img_sticker.shape[0], refined_x:refined_x+img_sticker.shape[1]] = \
     np.where(img_sticker!=0, sticker_area, img_sticker).astype(np.uint8)
-        ```
+```
     
 - [x]  **2. 전체 코드에서 가장 핵심적이거나 가장 복잡하고 이해하기 어려운 부분에 작성된 
 주석 또는 doc string을 보고 해당 코드가 잘 이해되었나요?**
@@ -31,14 +31,14 @@ img_rgb[refined_y:refined_y+img_sticker.shape[0], refined_x:refined_x+img_sticke
         - 중요! 잘 작성되었다고 생각되는 부분을 캡쳐해 근거로 첨부
         ![screenshot](./image/ex03_02.png)
         - 기울어진 사진에 대한 부분이 잘 작동되었다고 생각했고 이미지 회전시에 나타나는 검정 배경도 잘 처리되었습니다.
-        - ```
-        M = cv2.getRotationMatrix2D((cx, cy), -rotation_rate_rimg, 1.0)
+```
+M = cv2.getRotationMatrix2D((cx, cy), -rotation_rate_rimg, 1.0)
 rotated_image = cv2.warpAffine(img_sticker, M, (w, h), borderValue=(255,255,255))
 
 print(rotated_image.shape)
 plt.imshow(rotated_image)
 plt.show()
-        ```
+```
         
 - [x]  **3. 에러가 난 부분을 디버깅하여 문제를 해결한 기록을 남겼거나
 새로운 시도 또는 추가 실험을 수행해봤나요?**
@@ -65,8 +65,8 @@ plt.show()
         ![screenshot](./image/ex03_02.png)
         - 이미지를 회전하고 거꾸로 뒤집어가면서 실험한 장면이 간결하게 끊어저서 가독성이 좋았고 실험과정이 한눈에 보였습니다.
         - 스티커를 회전했을때 검정색 배경 여백이 발생하는 과정을 잘 지켜볼 수 있게 플롯이 다 작성되어 있고 어떤 문장을 통해 이를 해결 했는지 명쾌하게 적혀있습니다.
-        - ```
-        #landmark에 사용할 이미지 복사
+```
+#landmark에 사용할 이미지 복사
 uimg_rgb_land = uimg_rgb.copy()
 
 list_landmarks = []
@@ -91,7 +91,7 @@ cv2.circle(uimg_rgb_check, list_landmarks[0][27], 10, (0, 255, 255), -1)
         
 plt.imshow(uimg_rgb_check)
 plt.show()
-        ```
+```
 
 
 # 회고(참고 링크 및 코드 개선)
