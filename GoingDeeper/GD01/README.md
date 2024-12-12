@@ -123,7 +123,7 @@ def build_plain_block(input_layer,
         - 중요! 잘 작성되었다고 생각되는 부분을 캡쳐해 근거로 첨부
     - 주석도 간결하게 작성되어 있고 코드가 어떻게 진행되는지 한눈에 볼 수 있습니다.
     - 데이터 분할에서도 이전 cifar-10과 달라진 데이터셋에 맞춰 효율적으로 코드를 구성해 변경하였습니다.
-    ![파라미터](https://github.com/user-attachments/assets/f73e7a2d-235f-4a06-ba04-165596e491c8)
+    ![데이터](https://github.com/user-attachments/assets/f73e7a2d-235f-4a06-ba04-165596e491c8)
 
 
 # 회고(참고 링크 및 코드 개선)
